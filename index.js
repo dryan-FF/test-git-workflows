@@ -18,14 +18,15 @@ function scrollHandler(e) {
   console.log('user scrolled to: ' + e.pageX + ',' + e.pageY, new Date());
 }
 
-var debouncedScrollHandler = debounce(scrollHandler, 50, true);
-
-window.on('scroll', debouncedScrollHandler);
 
 function resizeHandler() {
   console.log('user resized to: ' + window.innerWidth + ',' + window.innerHeight, new Date());
 }
 
-var debouncedResizeHandler = debounce(resizeHandler, 50, true);
+function initializeHandlers() {
+	var debouncedScrollHandler = debounce(scrollHandler, 50, true);
+	window.on('scroll', debouncedScrollHandler);
 
-window.on('resize', debouncedResizeHandler);
+	var debouncedResizeHandler = debounce(resizeHandler, 50, true);
+	window.on('resize', debouncedResizeHandler);
+}
