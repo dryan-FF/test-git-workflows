@@ -13,3 +13,11 @@ function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	};
 };
+
+function scrollHandler(e) {
+  console.log('user scrolled to: ' + e.pageX + ',' + e.pageY);
+}
+
+var debouncedScrollHandler = debounce(scrollHandler, 100, true);
+
+window.on('scroll', debouncedScrollHandler);
