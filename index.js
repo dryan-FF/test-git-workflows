@@ -18,7 +18,7 @@ function scrollHandler(e) {
   console.log('user scrolled to: ' + e.pageX + ',' + e.pageY, new Date());
 }
 
-var debouncedScrollHandler = debounce(scrollHandler, 100, true);
+var debouncedScrollHandler = debounce(scrollHandler, 50, true);
 
 window.on('scroll', debouncedScrollHandler);
 
