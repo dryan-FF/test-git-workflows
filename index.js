@@ -26,6 +26,6 @@ function resizeHandler() {
   console.log('user resized to: ' + window.innerWidth + ',' + window.innerHeight);
 }
 
-var debouncedResizeHandler = debounce(resizeHandler, 100, true);
+var debouncedResizeHandler = debounce(resizeHandler, 50, true);
 
 window.on('resize', debouncedResizeHandler);
