@@ -21,3 +21,11 @@ function scrollHandler(e) {
 var debouncedScrollHandler = debounce(scrollHandler, 100, true);
 
 window.on('scroll', debouncedScrollHandler);
+
+function resizeHandler() {
+  console.log('user resized to: ' + window.innerWidth + ',' + window.innerHeight);
+}
+
+var debouncedResizeHandler = debounce(resizeHandler, 50, true);
+
+window.on('resize', debouncedResizeHandler);
