@@ -15,7 +15,7 @@ function debounce(func, wait, immediate) {
 };
 
 function scrollHandler(e) {
-  console.log('user scrolled to: ' + e.pageX + ',' + e.pageY);
+  console.log('user scrolled to: ' + e.pageX + ',' + e.pageY, new Date());
 }
 
 var debouncedScrollHandler = debounce(scrollHandler, 100, true);
@@ -23,7 +23,7 @@ var debouncedScrollHandler = debounce(scrollHandler, 100, true);
 window.on('scroll', debouncedScrollHandler);
 
 function resizeHandler() {
-  console.log('user resized to: ' + window.innerWidth + ',' + window.innerHeight);
+  console.log('user resized to: ' + window.innerWidth + ',' + window.innerHeight, new Date());
 }
 
 var debouncedResizeHandler = debounce(resizeHandler, 50, true);
